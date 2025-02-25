@@ -2,7 +2,7 @@ name: HackerRank Notifier
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # Runs every 5 minutes
+    - cron: "0/5 15-23 * * *"  # Runs every 5 minutes from 3 PM to 11 PM
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
