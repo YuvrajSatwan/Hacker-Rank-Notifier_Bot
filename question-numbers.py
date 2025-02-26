@@ -133,7 +133,7 @@ def notify_question_count():
     f"🕵️ *A secret has been unveiled...* {difference} fresh problems are here. The hunt for solutions begins now! 🔥"
 ]
 
-message = messages[difference % len(messages)]  # Randomized message selection
+
 
             
             base_message = messages[difference % len(messages)]  # Randomized message
