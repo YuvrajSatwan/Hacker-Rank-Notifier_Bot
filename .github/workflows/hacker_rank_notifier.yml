@@ -37,9 +37,11 @@ jobs:
           git config --local user.name "GitHub Actions"
           
           # Check if there are changes in question_count.txt
-          if ! git diff --quiet question_count.txt; then
+          if git diff --quiet question_count.txt; then
+            echo "No changes detected, skipping commit."
+          else
             git add question_count.txt
             git commit -m "Update question count"
             git push
-          else
-            echo "No changes detected, skipping commit."
+          fi
+        shell: bash
