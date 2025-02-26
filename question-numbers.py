@@ -30,14 +30,14 @@ HEADERS = {
 CONTEST_SLUG = "peacemakers24b1"
 
 def fetch_questions():
-    """Fetch all questions from the contest."""
+    """Fetch all questions from the contest and return their names."""
     offset = 0
     limit = 10
     all_questions = []
 
     while True:
         url = f"https://www.hackerrank.com/rest/contests/{CONTEST_SLUG}/challenges?offset={offset}&limit={limit}&track_login=true"
-
+        
         response = requests.get(url, headers=HEADERS, cookies=COOKIES)
         
         if response.status_code == 200:
@@ -48,15 +48,15 @@ def fetch_questions():
                 break
 
             for question in questions:
-                all_questions.append(question["name"])
+                all_questions.append(question["name"])  # Store question names
 
             offset += limit  # Move to the next batch
 
         else:
             print(f"❌ Request Failed! Status Code: {response.status_code}")
-            return None  # Return None if request fails
+            return None, []  # Return None for count and an empty list
 
-    return len(all_questions)
+    return len(all_questions), all_questions  # Return both count and names
 
 def send_telegram_message(message):
     """Send a Telegram message notification."""
@@ -99,8 +99,8 @@ def get_last_update_date():
     return None
 
 def notify_question_count():
-    """Fetch, compare, and send question count update to Telegram."""
-    question_count = fetch_questions()
+    """Fetch, compare, and send question count update with names to Telegram."""
+    question_count, question_names = fetch_questions()
 
     if question_count is None:
         print("❌ Failed to fetch questions.")
@@ -109,30 +109,30 @@ def notify_question_count():
     last_count = get_last_count()
 
     if last_count is None:
-        message = f"🚀 First Check! {question_count} questions are live! Are you ready to conquer the battlefield? ⚔️"
+        message = f"🚀 First Check! {question_count} questions are live!\n\n📌 **Latest Questions:**\n" + "\n".join([f"🔹 {q}" for q in question_names])
     else:
         difference = question_count - last_count
         if difference > 0:
+            new_questions = question_names[-difference:]  # Get only newly added questions
+
             messages = [
                 f"🔥 {difference} new coding challenges just arrived! Will you be the first to solve them? ⚡",
                 f"💡 BOOM! {difference} fresh problems are waiting for you. Time to showcase your skills! 🚀",
                 f"⚔️ A new war begins! {difference} more puzzles to crack. Are you the coding champion? 👑",
                 f"🤖 {difference} fresh problems have dropped! Will you rise or fall? The battle is on! 🔥",
                 f"⏳ Time waits for none! {difference} new questions are here. Ready to claim your rank? 🏆"
-               "🚀 *A New Challenge Awakens!* More questions have arrived. Can you conquer them all? 💡🔥",
-    "🔮 *The universe just expanded!* New questions have appeared. Time to level up! ⚡🧠",
-    "💥 *BOOM!* New problems just dropped! Your mind is the weapon—time to unleash it. 🚀💡",
-    "🕵️ *A mystery unfolds...* Fresh challenges are waiting for a worthy solver. That’s you! 🧐🔥",
-    "🏆 *A true warrior never rests!* More questions are here—will you rise to the challenge? ⚔️🧠",
-              
             ]
-            message = messages[difference % len(messages)]  # Randomizing message
+            base_message = messages[difference % len(messages)]  # Randomized message
+            question_list = "\n".join([f"🔹 {q}" for q in new_questions])  # Format question names
+            message = f"{base_message}\n\n📌 **New Questions:**\n{question_list}"
         else:
             print("No new questions. Skipping notification.")
             return
 
     send_telegram_message(message)
     save_new_count(question_count)
+
+
 
 def check_end_of_day():
     """Send a message if no new questions were uploaded by 11 PM IST."""
