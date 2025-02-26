@@ -121,6 +121,17 @@ def notify_question_count():
                 f"⚔️ A new war begins! {difference} more puzzles to crack. Are you the coding champion? 👑",
                 f"🤖 {difference} fresh problems have dropped! Will you rise or fall? The battle is on! 🔥",
                 f"⏳ Time waits for none! {difference} new questions are here. Ready to claim your rank? 🏆"
+                "🚀 *A new era begins...* Fresh challenges have arrived. Will you rise to the occasion? ⚔️🔥",
+    "🧠 *The battle of minds ignites!* {difference} new problems await. Who will claim victory? 🏆",
+    "⚡ *Anomaly detected!* {difference} new coding puzzles have surfaced. Time to decode the unknown! 🤖",
+    "🌌 *The void shifts...* {difference} challenges have emerged. Only the worthy will conquer them! ⚔️",
+    "🛡️ *A warrior’s path is never easy!* {difference} new trials have been unleashed. Face them with courage! 💡",
+    "⏳ *Time waits for no one!* {difference} more problems stand between you and greatness. Will you take them on? 🏅",
+    "📜 *A new scroll has been uncovered!* The secrets within these {difference} questions are waiting for a true solver! 🔍",
+    "💥 *The battlefield roars!* {difference} new coding quests have arrived. Show the world your skills! 🌟",
+    "🤖 *AI detects new challenges...* {difference} coding mysteries await. Will you solve them before anyone else? ⚙️",
+    "🕵️ *A secret has been unveiled...* {difference} fresh problems are here. The hunt for solutions begins now! 🔥"
+]
             ]
             base_message = messages[difference % len(messages)]  # Randomized message
             question_list = "\n".join([f"🔹 {q}" for q in new_questions])  # Format question names
