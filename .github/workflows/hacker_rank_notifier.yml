@@ -30,3 +30,16 @@ jobs:
 
       - name: Run question-numbers.py
         run: python question-numbers.py
+
+      - name: Commit and Push Changes (Only if Updated)
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          
+          # Check if there are changes in question_count.txt
+          if ! git diff --quiet question_count.txt; then
+            git add question_count.txt
+            git commit -m "Update question count"
+            git push
+          else
+            echo "No changes detected, skipping commit."
