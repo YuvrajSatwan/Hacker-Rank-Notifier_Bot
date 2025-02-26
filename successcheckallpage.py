@@ -5,8 +5,8 @@ import random
 from datetime import datetime
 
 # 🔹 Replace these with your Telegram bot token and chat ID
-TELEGRAM_BOT_TOKEN = "7523061594:AAFxrIIaLGMEw_49YUS5XOb_KG-sSW-zzAM"
-CHAT_ID = "7441746164"
+TELEGRAM_BOT_TOKEN = "7211810846:AAFchPh2P70ZWlQPEH1WAVgaLxngvkHmz3A"
+CHAT_ID = "1631288026"
 
 # 🔹 File to store previous questions
 QUESTIONS_FILE = "questions.json"
@@ -122,8 +122,7 @@ def check_for_new_questions():
             print("⚡ No new questions. Sent a motivational message!")
 
 # 🔹 Run the script
-check_for_new_questions()
-send_telegram_message("🚀 Testing direct message from script!")
+
 
 
 
