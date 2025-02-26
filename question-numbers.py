@@ -132,7 +132,7 @@ def notify_question_count():
     "🤖 *AI detects new challenges...* {difference} coding mysteries await. Will you solve them before anyone else? ⚙️",
     "🕵️ *A secret has been unveiled...* {difference} fresh problems are here. The hunt for solutions begins now! 🔥"
 ]
-            ]
+            
             base_message = messages[difference % len(messages)]  # Randomized message
             question_list = "\n".join([f"🔹 {q}" for q in new_questions])  # Format question names
             message = f"{base_message}\n\n📌 **New Questions:**\n{question_list}"
