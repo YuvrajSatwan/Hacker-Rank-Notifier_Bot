@@ -2,8 +2,8 @@ import requests
 import os
 
 # Replace with your Telegram bot API token and chat ID
-TELEGRAM_BOT_TOKEN = "7523061594:AAFxrIIaLGMEw_49YUS5XOb_KG-sSW-zzAM"
-TELEGRAM_CHAT_ID = "7441746164"
+TELEGRAM_BOT_TOKEN = "7211810846:AAFchPh2P70ZWlQPEH1WAVgaLxngvkHmz3A"
+TELEGRAM_CHAT_ID = "1631288026"
 
 # File to store the last question count
 COUNT_FILE = "question_count.txt"
