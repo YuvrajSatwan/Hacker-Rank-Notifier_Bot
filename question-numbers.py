@@ -193,7 +193,9 @@ def check_end_of_day():
     print(f"Current time (UTC): {utc_now}")
     print(f"Current time (IST): {ist_time}")
 
-    if ist_time.hour == 14 and ist_time.minute >= 30:  # 2:30 PM IST or later
+    if (ist_time.hour > 14 or (ist_time.hour == 14 and ist_time.minute >= 30)) and not did_send_no_questions_message_today():
+
+
         last_update_date = get_last_update_date()
         today_date = ist_time.strftime("%Y-%m-%d")
 
