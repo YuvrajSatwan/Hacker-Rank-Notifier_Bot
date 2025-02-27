@@ -150,7 +150,7 @@ def notify_question_count():
 
             messages = [
                 f"🔥 {difference} new coding challenges just arrived! Will you be the first to solve them? ⚡",
-                f"💡 BOOM! {difference} fresh problems are waiting for you. Time to showcase your skills! 🚀",
+                f"💡 {difference} fresh problems are waiting for you. Time to showcase your skills! 🚀",
                 f"⚔️ A new war begins! {difference} more puzzles to crack. Are you the coding champion? 👑",
                 f"🤖 {difference} fresh problems have dropped! Will you rise or fall? The battle is on! 🔥",
                 f"⏳ Time waits for none! {difference} new questions are here. Ready to claim your rank? 🏆",
@@ -162,7 +162,7 @@ def notify_question_count():
                 f"⏳ *Time waits for no one!* {difference} more problems stand between you and greatness. Will you take them on? 🏅",
                 f"📜 *A new scroll has been uncovered!* The secrets within these {difference} questions are waiting for a true solver! 🔍",
                 f"💥 *The battlefield roars!* {difference} new coding quests have arrived. Show the world your skills! 🌟",
-                f"🤖 *AI detects new challenges...* {difference} coding mysteries await. Will you solve them before anyone else? ⚙️",
+                f"new challenges...* {difference} coding mysteries await. Will you solve them before anyone else? ⚙️",
                 f"🕵️ *A secret has been unveiled...* {difference} fresh problems are here. The hunt for solutions begins now! 🔥"
             ]
 
@@ -193,7 +193,7 @@ def check_end_of_day():
     print(f"Current time (UTC): {utc_now}")
     print(f"Current time (IST): {ist_time}")
 
-    if (ist_time.hour > 14 or (ist_time.hour == 14 and ist_time.minute >= 30)) and not did_send_no_questions_message_today():
+    if (ist_time.hour > 22 or (ist_time.hour == 22 and ist_time.minute >= 30)) and not did_send_no_questions_message_today():
 
 
         last_update_date = get_last_update_date()
@@ -220,7 +220,7 @@ def check_end_of_day():
         else:
             print("Conditions not met for 'no questions today' message.")
     else:
-        print("Time is not yet 2:30 PM IST.")
+        print("Time is not yet 10:30 PM IST.")
 
 # Run the function
 notify_question_count()
