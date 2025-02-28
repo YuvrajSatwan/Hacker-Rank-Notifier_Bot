@@ -2,8 +2,7 @@ name: HackerRank Notifier
 
 on:
   schedule:
-    - cron: "30/5 9 * * *"  # Runs every 5 minutes, starting at 9:30 AM UTC
-    - cron: "0/5 10-17 * * *"  # Runs every 5 minutes from 10 AM UTC to 5:00 PM UTC
+    - cron: "* * * * *"  # Runs every minute
   workflow_dispatch:  # Allows manual triggering (run manually from the Actions tab)
 
 jobs:
@@ -25,8 +24,12 @@ jobs:
       - name: Install Dependencies
         run: pip install requests pytz  # 🔥 Fixed
 
-      - name: Run successcheckallpage.py
-        run: python successcheckallpage.py
+      - name: Random Delay to Avoid Spam Detection
+        run: |
+          delay=$((RANDOM % 11 + 5))
+          echo "Sleeping for $delay seconds..."
+          sleep $delay
+        shell: bash
 
       - name: Run question-numbers.py
         run: python question-numbers.py
@@ -52,7 +55,6 @@ jobs:
           if [ "$no_questions_sent_changed" -ne "0" ]; then
             git add no_questions_sent.txt
           fi
-
 
           if [ "$question_count_changed" -ne "0" ] || [ "$last_update_changed" -ne "0" ] || [ "$no_questions_sent_changed" -ne "0" ]; then
             git commit -m "Update state files"
