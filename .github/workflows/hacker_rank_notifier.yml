@@ -2,7 +2,7 @@ name: HackerRank Notifier
 
 on:
   schedule:
-    - cron: "* * * * *"  # Runs every minute
+    - cron: "*/10 * * * *"  # 🔥 Runs every 10 minutes
   workflow_dispatch:  # Allows manual triggering (run manually from the Actions tab)
 
 jobs:
@@ -39,7 +39,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
 
-          # Check if there are changes in question_count.txt
+          # Check if there are changes in state files
           question_count_changed=$(git diff --quiet question_count.txt; echo $?)
           last_update_changed=$(git diff --quiet last_update.txt; echo $?)
           no_questions_sent_changed=$(git diff --quiet no_questions_sent.txt; echo $?)
