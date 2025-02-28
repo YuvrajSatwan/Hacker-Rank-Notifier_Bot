@@ -169,7 +169,7 @@ def notify_question_count():
             random_index = random.randint(0, len(messages) - 1)
             base_message = messages[random_index]
 
-            question_list = "\n".join([f"🔹 {q}" for q in new_questions])
+            question_list = "\n".join([f"✨ {q}" for q in new_questions])
             message = f"{base_message}\n\n📌 **New Questions:**\n{question_list}"
 
             send_telegram_message(message)
