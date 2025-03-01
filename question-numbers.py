@@ -209,7 +209,29 @@ def check_end_of_day():
                 "🤖 No new challenges today, but legends never rest. Stay sharp, for the storm may arrive tomorrow! ⚡",
                 "⏳ A day without new battles... The silence before the storm? Stay alert, coder! 🚀",
                 "🌓 The coding universe is quiet tonight. Perhaps a challenge awaits at dawn? Be ready! 🌅",
-                "💭 Today, the servers rest. The future awaits! 🚀"
+                "💭 Today, the servers rest. The future awaits! 🚀",
+                "🚀 The best coders don't wait for challenges... They **create their own battles in silence**. Did you grind today?",
+"💪 Today's silence is tomorrow's victory... Every line of code you write in the shadows will echo in the leaderboard!",
+"🌑 No questions today... but the battlefield isn't empty — it's waiting for the few who are **hungry enough to train in the silence**.",
+"🔥 Legends aren't made on the leaderboard... they are built in the **days no one is watching**. What will you build today?",
+"⏳ A day without challenges is not a rest day... It's a test of **who trains even when the battlefield is empty.**",
+"💭 The Void is silent today... but the real warriors never wait for orders. They grind in the shadows.",
+"👀 The leaderboard doesn't see what you do in silence... but it will one day **remember your name**.",
+"⚡ A day without battles is a blessing... Because the greatest warriors sharpen their blades when the world sleeps.",
+"🚶‍♂️ One day, the leaderboard will call your name... But only if you **walk the path when no one is watching.**",
+"🔒 No new challenges today... That's not an excuse — it's an **invitation to outwork everyone silently.**",
+"🌘 The Void may be empty... but every line of code you write in this silence is one step closer to the 1% Club.",
+"🔥 The difference between 99% and 1%? What you do when there are **no new battles to fight.**",
+"⚔️ The leaderboard is sleeping... but the **VoidWalkers** are still grinding. Are you one of them?",
+"🌑 Today the battlefield is empty... But the rise of warriors always begins in the shadows.",
+"💀 Real coders **fear comfort more than failure**. Did you grind today, or did you rest with the 99%?",
+"🚀 Zero questions = Zero excuses. If the world isn't testing you... **test yourself.**",
+"🔄 No new questions... But consistency beats talent when talent is sleeping.",
+"⚡ The leaderboard will remember your name... but only if you **grind in the days no one sees.**",
+"💪 A silent day is the best day... because that's when only the **real ones keep coding.**",
+"📜 One empty day will never break a legend... but one skipped day might.",
+"🔥 No new questions... But there's always one unsolved problem — the one inside your own mind.",
+"⚔️ The journey is not about coding every day... it's about **becoming the kind of person who codes every day**."
             ]
             random_index = random.randint(0, len(messages) - 1)
             message = messages[random_index]
