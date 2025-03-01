@@ -149,21 +149,21 @@ def notify_question_count():
             new_questions = question_names[-difference:]  # Get only newly added questions
 
             messages = [
-                f"🔥 {difference} new coding challenges just arrived! Will you be the first to solve them? ⚡",
-                f"💡 {difference} fresh problems are waiting for you. Time to showcase your skills! 🚀",
-                f"⚔️ A new war begins! {difference} more puzzles to crack. Are you the coding champion? 👑",
-                f"🤖 {difference} fresh problems have dropped! Will you rise or fall? The battle is on! 🔥",
-                f"⏳ Time waits for none! {difference} new questions are here. Ready to claim your rank? 🏆",
-                f"🚀 *A new era begins...* {difference} fresh challenges have arrived. Will you rise to the occasion? ⚔️🔥",
-                f"🧠 *The battle of minds ignites!* {difference} new problems await. Who will claim victory? 🏆",
-                f"⚡ *Anomaly detected!* {difference} new coding puzzles have surfaced. Time to decode the unknown! 🤖",
-                f"🌌 *The void shifts...* {difference} challenges have emerged. Only the worthy will conquer them! ⚔️",
+                f"🔥 {difference} new coding challenge just arrived! Will you be the first to solve them? ⚡",
+                f"💡 {difference} fresh problem are waiting for you. Time to showcase your skills! 🚀",
+                f"⚔️ A new war begins! {difference} more puzzle to crack. Are you the coding champion? 👑",
+                f"🤖 {difference} fresh problem have dropped! Will you rise or fall? The battle is on! 🔥",
+                f"⏳ Time waits for none! {difference} new question are here. Ready to claim your rank? 🏆",
+                f"🚀 *A new era begins...* {difference} fresh challenge have arrived. Will you rise to the occasion? ⚔️🔥",
+                f"🧠 *The battle of minds ignites!* {difference} new problem await. Who will claim victory? 🏆",
+                f"⚡ *Anomaly detected!* {difference} new coding puzzle have surfaced. Time to decode the unknown! 🤖",
+                f"🌌 *The void shifts...* {difference} challenge have emerged. Only the worthy will conquer them! ⚔️",
                 f"🛡️ *A warrior’s path is never easy!* {difference} new trials have been unleashed. Face them with courage! 💡",
-                f"⏳ *Time waits for no one!* {difference} more problems stand between you and greatness. Will you take them on? 🏅",
-                f"📜 *A new scroll has been uncovered!* The secrets within these {difference} questions are waiting for a true solver! 🔍",
-                f"💥 *The battlefield roars!* {difference} new coding quests have arrived. Show the world your skills! 🌟",
-                f"new challenges...* {difference} coding mysteries await. Will you solve them before anyone else? ⚙️",
-                f"🕵️ *A secret has been unveiled...* {difference} fresh problems are here. The hunt for solutions begins now! 🔥"
+                f"⏳ *Time waits for no one!* {difference} more problem stand between you and greatness. Will you take them on? 🏅",
+                f"📜 *A new scroll has been uncovered!* The secrets within these {difference} question are waiting for a true solver! 🔍",
+                f"💥 *The battlefield roars!* {difference} new coding quest have arrived. Show the world your skills! 🌟",
+                f"new challenges...* {difference} coding mystery await. Will you solve them before anyone else? ⚙️",
+                f"🕵️ *A secret has been unveiled...* {difference} fresh problem are here. The hunt for solutions begins now! 🔥"
             ]
 
             random_index = random.randint(0, len(messages) - 1)
